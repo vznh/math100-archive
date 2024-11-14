@@ -1,0 +1,209 @@
+\documentclass{article}
+\usepackage{amsmath} % For better math support
+\usepackage{amssymb}
+
+
+\title{MATH 100 - PSet \#6}
+\author{JasonVinh Son}
+\date{November 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{6.2.5}
+Let \( a, b, c \in \mathbb{Z} \). Prove or disprove: If \( a \mid bc \), then \( a \mid b \) or \( a \mid c \).
+
+\section*{Solution}
+This statement is false. Disproving by counterexample:
+
+Consider \( a = 6 \), \( b = 2 \), and \( c = 3 \).
+
+\begin{itemize}
+    \item Calculate \( bc \):
+    \[
+    bc = 2 \times 3 = 6.
+    \]
+    \( 6 \mid 6 \) holds, so \( a \mid bc \).
+
+    \item Now, we'll check if \( a \mid b \) or \( a \mid c \):
+    \begin{align*}
+        6 \mid 2 & \quad \text{(False, as } \frac{2}{6} \text{ is not an integer)} \\
+        6 \mid 3 & \quad \text{(False, as } \frac{3}{6} \text{ is not an integer)}
+    \end{align*}
+\end{itemize}
+
+Thus, \( a \mid bc \) is true, but neither \( a \mid b \) nor \( a \mid c \) is true. This counterexample shows that the original statement is \textbf{false}.
+
+\medskip
+
+\section*{6.2.14}
+Assume that \( r \) and \( s \) are relatively prime. Show that \( r + s \) and \( s \) are relatively prime also.
+
+\section*{Solution}
+Given that \( r \) and \( s \) are relatively prime, we have:
+\[
+\gcd(r, s) = 1.
+\]
+
+We want to show that \( \gcd(r + s, s) = 1 \).
+
+\begin{enumerate}
+    \item Let \( d \) be the greatest common divisor of \( r + s \) and \( s \). Thus,
+    \[
+    d \mid (r + s) \quad \text{and} \quad d \mid s.
+    \]
+
+    \item If \( d \mid s \), we can express \( s = d k \) for some integer \( k \).
+
+    \item Since \( d \mid (r + s) \), we have:
+    \[
+    r + s = d m \quad \text{for some integer } m.
+    \]
+
+    \item Subtracting the two expressions:
+    \[
+    r = d (m - k),
+    \]
+    implies that \( d \mid r \).
+
+    \item Thus, \( d \) divides both \( r \) and \( s \). However, since \( \gcd(r, s) = 1 \) by assumption, the only integer that divides both is \( d = 1 \).
+\end{enumerate}
+
+Therefore,
+\[
+\gcd(r + s, s) = 1,
+\]
+showing that \( r + s \) and \( s \) are relatively prime.
+
+\section*{6.2.18}
+Let \( b, c \in \mathbb{Z} \). Suppose that \( b \) and \( c \) are relatively prime. Show that for all integers \( a \), \(\gcd(a, b)\) and \(\gcd(a, c)\) are relatively prime.
+
+\section*{Solution}
+Let \( d_1 = \gcd(a, b) \) and \( d_2 = \gcd(a, c) \). We want to show that:
+\[
+\gcd(d_1, d_2) = 1.
+\]
+
+\begin{enumerate}
+    \item Let \( d = \gcd(d_1, d_2) \). By definition, \( d \mid d_1 \) and \( d \mid d_2 \), which implies:
+    \[
+    d \mid \gcd(a, b) \quad \text{and} \quad d \mid \gcd(a, c).
+    \]
+
+    \item Since \( d \mid d_1 \), we have \( d \mid a \) and \( d \mid b \). Similarly, since \( d \mid d_2 \), we have \( d \mid a \) and \( d \mid c \).
+
+    \item Therefore, \( d \) divides both \( b \) and \( c \).
+
+    \item Given that \( \gcd(b, c) = 1 \), the only integer that divides both \( b \) and \( c \) is \( d = 1 \).
+\end{enumerate}
+
+Thus, we have shown that:
+\[
+\gcd(\gcd(a, b), \gcd(a, c)) = 1.
+\]
+
+Therefore, \( \gcd(a, b) \) and \( \gcd(a, c) \) are relatively prime for all integers \( a \).
+
+
+\medskip
+
+\section*{6.3.3 (1, 2)}
+Use the Euclidean algorithm to find the greatest common divisor for the following pairs of numbers:
+
+\begin{enumerate}
+    \item \( 48 \) and \( 18 \)
+    \item \( 2,700 \) and \( 17,640 \)
+\end{enumerate}
+
+\section*{Solution}
+
+\textbf{For \(\gcd(48, 18)\):}
+
+\[
+48 = 18(2) + 12
+\]
+\[
+18 = 12(1) + 6
+\]
+\[
+12 = 6(2) + 0
+\]
+
+Thus, \(\gcd(48, 18) = 6\).
+
+\medskip
+
+\textbf{For \(\gcd(2,700, 17,640)\):}
+
+\[
+17,640 = 2,700(6) + 1,440
+\]
+\[
+2,700 = 1,440(1) + 1,260
+\]
+\[
+1,440 = 1,260(1) + 180
+\]
+\[
+1,260 = 180(7) + 0
+\]
+
+Thus, \(\gcd(2,700, 17,640) = 180\).
+
+\medskip
+
+
+\section*{6.4.3}
+Let \( a \) and \( b \) be relatively prime integers. Let \( c \) be any integer. Prove the following:
+
+\begin{enumerate}
+    \item If \( a \mid bc \), then \( a \mid c \).
+    \item If \( a \mid c \) and \( b \mid c \), then \( ab \mid c \).
+\end{enumerate}
+
+\section*{Solution}
+
+\begin{enumerate}
+    \item \textbf{If \( a \mid bc \), then \( a \mid c \)}
+
+    \begin{enumerate}
+        \item Given: \( a \mid bc \) and \( \gcd(a, b) = 1 \).
+        \item Since \( a \mid bc \), there exists an integer \( k \) such that:
+        \[
+        bc = ak.
+        \]
+        \item Since \( \gcd(a, b) = 1 \), \( a \) and \( b \) have no common factors other than 1.
+        \item By a property of relatively prime integers, if \( a \mid (bc) \) and \( \gcd(a, b) = 1 \), then \( a \mid c \).
+    \end{enumerate}
+    Thus, \( a \mid c \).
+
+    \item \textbf{If \( a \mid c \) and \( b \mid c \), then \( ab \mid c \)}
+
+    \begin{enumerate}
+        \item Given: \( a \mid c \) and \( b \mid c \) with \( \gcd(a, b) = 1 \).
+        \item Since \( a \mid c \), there exists an integer \( m \) such that:
+        \[
+        c = am.
+        \]
+        \item Since \( b \mid c \), there exists an integer \( n \) such that:
+        \[
+        c = bn.
+        \]
+        \item Thus, we have:
+        \[
+        am = bn.
+        \]
+        \item Dividing both sides by \( a \), we get:
+        \[
+        m = \frac{bn}{a}.
+        \]
+        \item Since \( \gcd(a, b) = 1 \), \( a \) divides \( n \). Let \( n = ak \) for some integer \( k \).
+        \item Substituting \( n = ak \) into the equation \( c = bn \), we get:
+        \[
+        c = b(ak) = abk.
+        \]
+    \end{enumerate}
+    Thus, \( ab \mid c \).
+\end{enumerate}
+\end{document}
